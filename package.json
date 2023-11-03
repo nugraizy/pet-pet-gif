@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/aDu/pet-pet-gif#readme",
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.44",
     "gifencoder": "^2.0.1",
     "lodash": "^4.17.21"
   }

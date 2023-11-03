@@ -2,7 +2,7 @@ const path = require('path')
 const _ = require('lodash')
 
 const GIFEncoder = require('gifencoder')
-const Canvas = require('canvas')
+const Canvas = require('@napi-rs/canvas')
 
 const FRAMES = 10
 
@@ -47,7 +47,7 @@ module.exports = async (avatarURL, options = {}) => {
         const offsetX = (1 - width) * 0.5 + 0.1
         const offsetY = (1 - height) - 0.08
 
-        if (i == petGifCache.length) petGifCache.push(await Canvas.loadImage(path.resolve(__dirname, `img/pet${i}.gif`)))
+        if (i === petGifCache.length) petGifCache.push(await Canvas.loadImage(path.resolve(__dirname, `img/pet${i}.gif`)))
 
         ctx.drawImage(avatar, options.resolution * offsetX, options.resolution * offsetY, options.resolution * width, options.resolution * height)
         ctx.drawImage(petGifCache[i], 0, 0, options.resolution, options.resolution)
